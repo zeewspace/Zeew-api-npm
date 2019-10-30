@@ -1,0 +1,33 @@
+{
+  "name": "zeew",
+  "version": "0.0.62",
+  "description": "Este es un npm de endpoints muy útil para tu servidor, cumplimos con funciones para editar de imagenes y gifs aleatorios y una bienvenida especial para tu servidor.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-superfetch": "^0.1.9"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValerynR/zeew-api"
+  },
+  "author": "KamerrOficial",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ValerynR/zeew-api/issues"
+  },
+  "homepage": "http://zeew.glitch.me/",
+  "keywords": [
+    "endpoint",
+    "api",
+    "node",
+    "discord.js",
+    "gifs",
+    "anime"
+  ]
+}
