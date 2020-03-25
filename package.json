@@ -7,7 +7,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "node-superfetch": "^0.1.9"
+    "discord.js": "^12.0.2",
+    "node-superfetch": "^0.1.10"
   },
   "engines": {
     "node": "10.x"
