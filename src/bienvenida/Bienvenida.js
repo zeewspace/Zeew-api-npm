@@ -6,6 +6,12 @@ class Bienvenida {
         for(var i in keys) this[keys[i]] = datos[keys[i]]
     }
     }
+
+    token(token){
+        this.token = token;
+        return this;
+    }
+
     titulo(title){
         this.title = title;
     return this;
