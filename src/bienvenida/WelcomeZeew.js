@@ -11,11 +11,11 @@ async function WelcomeZeew(bienvenida){
     const colorTitulo = bienvenida.ctit
     const colorDesc = bienvenida.cdesc 
     const txDesc = bienvenida.Desc
-    const estilo = bienvenida.estilo 
+    const estilo = bienvenida.estilo
+    const token = bienvenida.token
  
 
     const { body } = await request.get("https://zeew-test.glitch.me/api/img/bienvenida")
-    .set("token", this.token)
     .query({
       estilo: estilo,
       fondo: fondo,

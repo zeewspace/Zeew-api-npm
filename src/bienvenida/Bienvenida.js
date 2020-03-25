@@ -45,9 +45,5 @@ class Bienvenida {
         this.estilo = estilo;
         return this;
     }
-
-  
-    
-  
 }
 module.exports = {Bienvenida};

@@ -66,6 +66,10 @@ class sfw {
     tipos:
   */
 
+  /**
+   * 
+   * @param {string} Abrazos  anime o humanos 
+   */
   async hug(tp) {
     let {
       body
@@ -77,6 +81,10 @@ class sfw {
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
+   /**
+   * 
+   * @param {string} Llorar  anime o humanos 
+   */
   async cry(tp) {
     let {
       body
@@ -88,6 +96,10 @@ class sfw {
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
+   /**
+   * 
+   * @param {string} Galletas  anime o humanos 
+   */
   async cookie(tc) {
     let {
       body
@@ -99,10 +111,14 @@ class sfw {
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
+   /**
+   * 
+   * @param {string} Bailar  anime o humanos 
+   */
   async dance(tp) {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/cookie').set("token", this.token)
+    } = await req.get('https://zw-api.herokuapp.com/api/gif/dance').set("token", this.token)
       .query({
         type: tp
       })
@@ -114,4 +130,4 @@ class sfw {
 }
 
 
-module.exports = {sfw}
+module.exports = { sfw }
