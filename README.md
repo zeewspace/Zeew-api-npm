@@ -2,297 +2,269 @@
 ![npm](https://i.imgur.com/MP2bABn.png)
 
 
-# Bienvenido a Zeew
-
- ## No Importante
-
-> Queremos Protejer a Zeew de usuarios inactivos y problematicos.
-> estamos MEJORANDOS A zeew, ahora tiene un sistema de TOKEN (beta)
-> Es Beta, vamos a ver como funciona y despues aremos un `Client` Universal.
-> recuerda apoyar a zeew para que siga existiendo, dando una [Donacion](discord.gg/PBDbHGq).
-
-> estamos en epocas de mantenimiento y actualizaciones , si algo no funciona como deberia, no te preocupes , se solucionara lo mas rapido posible.
-> si el problema no se ha solucionado, reportadolo al servidor de soporte
-> discord.gg/PBDbHGq » Apoya A zeew para que siga existiendo
-
-> Si tienes ideas para mejorar Zeew son bienvenidas
+# Bienvenido a Zeew Api
 
 ## Informacion
- Zeew es una api con gif's de Interacción, manipulacion de imagenes
- y mas apoyado por la comunidad de Creacion de bots de discord.js
 
-* **Constructores**
-  * [SFW](#sfw)
-  * [IMG](#img)
-  * [Bienvenidas](#bienvenidas)
-* **Zeew**
-  * [Staff](#staff)
-  * [Mas Proyectos](#proyectos)
+Zeew api soy una api de imagenes de interaccion, pero mi mi fuerte es la manipulacion y mis bienvenidas.
 
-## Instalación & Uso
+Soy una api creada para los creadores de bots, ayudandoles y facilitandoles crear codigos complejos para manipular o crear bienvenidas.
 
-¿Tienes problemas? 
-- [Soporte Discord](https://discord.gg/PBDbHGq)
+y lo mejor que estoy completamente en ingles ♥
 
-### Instala el Modulo
+- **Constructores**
+  - [SFW](#SFW)
+  - [IMG](#IMG)
+  - [BIENVENIDAS](#BW)
+- **Zeew Api**
+  - [Soporte](#SOPORTE)
+  - [Staff](#STAFF)
+  - [Mas Proyectos](#PROYECTOS)
+  - [Donaciones](#DONACIONES)
+- **Extra**
+  - [Usalo con Discord.js](#Discord)
+
+
+
+## Instalacion & Uso
+
+Para usar la mayoria de las funciones, debes tener un token.
+ese token tiene registrado, el nombre del usuario al cual se le ha otorgado el token.
+
+Y puedes optenerlo desde el servidor de soporte en discord.
+
+El `valor` son los parametros que pide, para hacer la funcion, ya que puedes obtener 2 resultados diferentes.
+
+El `null` significa que no necesita ningun parametro
+
+Estas funciones, regresan una gif de una imagen aleatoria segun su funcion.
+
+Si usas Discord y tu vercion la V12. esta estas [opciones](#Discord)
+
+
+ Las funciones retornan una promesa, a si que recuerda usar el async/await
+
+<a name="SFW"></a>
+
+### Constructor SFW
+
+- **Como usar el constructor**
 
 ```javascript
-npm i zeew
+const Zeew = require('zeew');
+const sfw = new Zeew.sfw("Token")
 ```
 
-* Llamar el módulo
+- **Contenido SFW**
 
-```js
-const zeew = require('zeew')
+Funcion | Descripcion | Valor
+--- | :---: | ---:
+kiss | beso | 
+punch | golpe | 
+neko | gatio | 
+wink | giño | 
+slap | bogetada | 
+run | correr | 
+hug | abrazo | anime o human
+cry | llorar | anime o human
+cookie | galletas | anime o human
+dance | baile | anime o human
+
+- **Ejemplo**
+
+```javascript
+const Zeew = require('zeew');
+const sfw = new Zeew.sfw("TOKEN");
+
+// -= Valor =-
+sfw.hug("anime");
+
+// -= Sin valor =-
+sfw.kiss();
+
+// Ejemplo usando Discord.js
+let kiss = await sfw.kiss()
+message.channel.send({files: [kiss]})
+
 ```
 
-### Constructore
+<a name="IMG"></a>
 
-<a name="sfw" />
+### Constructor IMG
+> En un futuro sera usara igual que el constructor sfw
+> por el momento funciona de esta menera
 
-### SFW
-
-```js
-const Zeew = require('zeew')
-const sfw = new Zeew.sfw("TOKEN")
+- **Como usar el constructor**
+- Forma
+  - Actual » Como funciona actualmente
+```javascript
+const Zeew = require('zeew');
+const sfw = new Zeew.img.<funcion>(valor)
 ```
 
-> Obten tu token el servidor.
-
-| Función | Descripción|
-| --------|------------|
-|cry| Regresa ungif de alguien llorando aleatoria|
-|hug| Regresa un gif de un abrazo aleatoria|
-|kiss| Regresa un gif de un beso aleatoria |
-|punch| Regresa un gif de un golpe aleatoria|
-|suicide| Regresa un gif de un suicidio aleatoria|
-|kill| Regresa un gif de un asesinato aleatoria|
-|wasted| Regresa un gif de un wasted aleatoria|
-|neko| Regresa un gif de un gatito aleatoria|
-|slap| Regresa un gif de una bofetada aleatoria|
-
-* valores **(anime / human)** 
-
-| Función | Descripción|
-| --------|------------|
-|hug | Regresa un gif de abrazo Anime/Humana random|
-|cry | Regresa un gif llorando Anime/Humana random|
-|cookie | Regresa un gif de galletas Anime/Humana random|
-|dance | Regresa un gif bailando Anime/Humana random|
-
-
-<a name="img" />
-
-### IMG
-
-|Función|Descripcion|Uso|
-|-------|-----------|--|
-|blur| Agrega blur a la imagen| blur(URL) |
-|sepia| Entonece la imagen en escalas grises| sepia(URL) |
-| distort | Distorsiona la imagen dependiendo de la amplitud | distort(URL, AMPLITUD) |
-|invert| Invierte el color de la imagen| invert(URL) |
-
-> Requerido el url del avatar
-
-
-
-## Modo De Uso
-
-### Obtener un resultado
-
-```js
-const Zeew = require('zeew')
-// -= Token -=
-const zw = new Zeew.sfw("TOKEN")
-
-// Promesa
-// -= con un Valor =-
-zw.hug("anime").then(a => {
-    console.log(a);
-})
-// -= sin Valor =-
-zw.kiss().then(a => {
-    console.log(a);
-})
-
-//Funcion
-async function kiss(){
-    let img = await zw.kiss()
-    console.log(img);
-}
-
-kiss()
-
-// -= ---------------------- =-
+- Forma
+  - Futuro » Asi es como funcionara proximamente
+```javascript
+const Zeew = require('zeew');
+const sfw = new Zeew.img("Token")
 ```
 
+- **Contenido IMG**
 
-#### Manipulacion de imagenes | Categoría (img)
+Funcion | Descripcion | Valor
+--- | :---: | ---:
+blur | imagen borrosa | imagen
+sepia | imagen a escala de grises | imagen
+distort | Distorsiona  la imagne | imagen & Amplitud
+invert | invierte los colores | imagen
 
-* Ejemplo básico
+- **Ejemplo**
 
-```js
+```javascript
+const Zeew = require('zeew');
+
+// -= Un valor =-
 let img = "https://i.imgur.com/09RRYve.jpg";
-zeew.img.blur(img)
-```
+let blur = await Zeew.img.blur(img)
 
-Resultado: 
-
-
-![npm](https://media.discordapp.net/attachments/571035853111951371/602493002245603348/blur.png)
-
-
-* Ejemplo básico con 2 valores
-
-
-```js
+// -= Dos Valores =-
 let img = "https://i.imgur.com/09RRYve.jpg";
-zeew.img.distort(img, 5)
-```
-
-> El primer valor siempre sera un URL de una pagina, el segundo valor siempre debe ser un numero
-
-Resultado:
-
-![distort](https://media.discordapp.net/attachments/571035853111951371/602496322532278273/distort.png)
-
-
-#### Discord
-
-  * RichEmbed
-
-```js
-const Zeew = require('zeew')
-const zw = new Zeew.sfw("TOKEN")
-
-let img = await zw.cry()
-  
-  let embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setDescription(`**${message.author.username}**  Está triste 😢`)
-  .setImage(img)
-  message.channel.send(embed)
+let blur = await Zeew.img.distort(img, 5);
 
 ```
 
-  * Attachments
+<a name="BW"></a>
 
-```js
-const Zeew = require('zeew')
-const zw = new Zeew.sfw("TOKEN")
+### Constructor Bienvenida
 
-let img = await zw.cry("anime")
+- **Contenido IMG**
 
-const { Attachment } = require('discord.js');
-const attachment = new Attachment(img);
+Funcion | Descripcion 
+:--- | ---: 
+token | clave de acceso
+estilo | Estilo de la card 
+avatar | imagen del perfil 
+fondo | Imagen de fondo 
+colorTit | color del titulo 
+titulo | titulo de la card 
+colorDesc | color de la desc 
+descripcion | texto de descripcion
 
-message.channel.send(`${message.author} Esta llorando....,`, attachment);
+- **Estilos**
+  - [classic](https://i.imgur.com/XqOGyel.png)
+  - [anime](https://i.imgur.com/ZEt9X63.png)
+
+- **Modo de Uso**
+
+```javascript
+const Zeew = require('zeew');
+
+let wel = new Zeew.Bienvenida()
+.token("TOKEN")
+.estilo("classic")
+.avatar("https://i.imgur.com/09RRYve.jpg")
+.fondo("https://i.imgur.com/0YrfJgx.jpg")
+.colorTit("#FF3DB0")
+.titulo("Bienvenido")
+.colorDesc("#fff")
+.descripcion("Tenemos un nuevo usuario")
+
+let img = await Zeew.WelcomeZeew(wel);
 ```
 
-<a name="bienvenidas" />
+## Informacion & Soporte
 
-### Bienvenidas Discord
+<a name="SOPORTE"></a>
 
-####  Valores
+### Soporte
 
-| Función | Valor
-| --------|------------
-|.avatar()| URL
-|.fondo()| URL / tamaño indicado 1500x500
-|.colorTit()| Color hexadecimal, si no se provee un valor, el color será blanco
-|.titulo()| String / Texto
-|.colorDesc()| Color hexadecimal, si no se provee un valor, el color será blanco
-|.descripcion()| String / Texto
-|.estilo()| Si se deja vacio el estilo por defecto será `classic`
-> te ayudamos con los colores entra aqui https://htmlcolorcodes.com/es/ (No nos paga por hacerle promo)
+Si tienes errores, bugs o quieres contactarnos.
 
-#### Ejemplo usando el constructor de la bienvenida para Discord.
+- **Discord**
+  - [Servidor del Creador](https://discord.gg/3K8pdmf)
+  - [Servidor del Soporte](https://discord.gg/3K8pdmf)
+- **Redes Sociales**
+  - Creador: `@KamerrEzz`
 
-```js
-const Zeew = require('zeew')
- 
-  let wel = new Zeew.Bienvenida()
-  .token("TOKEN")
-  .avatar(member.user.displayAvatarURL)
-  .fondo("https://i.imgur.com/0YrfJgx.jpg")
-  .colorTit("")
-  .estilo("classic")
-  .titulo(`Bienvenido  al servidor ${member.user.username}`)
-  .colorDesc("")
-  .descripcion("Disfruta tu estadia en el servidor")
-  
-let img = await Zeew.WelcomeZeew(wel)
- 
-member.guild.channels.get("Id del canal").send({files: [img]})
+<a name="STAFF"></a>
+
+### Staff
+
+- **Kamerr Ezz**
+```
+* ROL: Founder
+* ID Discord: 403695999941345280
+* Redes Sociales: @KamerrEzz
+* Pagina Web: KamerrEzz.com
+```
+
+- **ValerynR (Ex-Staff)**
+```
+* ROL: Co-Owner
+* ID Discord: 393603334847856650
+```
+
+<a name="PROYECTOS"></a>
+
+### Proyectos
+
+Proyecto | Descripcion 
+:--- | ---: 
+[Zeew-eco](https://www.npmjs.com/package/zeew-eco) | Crea una economia
 
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// -= Quieres meterlo en un embed =-
+### Donaciones
+
+<a name="DONACIONES"></a>
+Donacion | Descripcion 
+:--- | ---: 
+[ko-fi](https://ko-fi.com/kamerroficial) | Apoya desde cofi
+[paypal](https://www.paypal.me/kamerrezz) | Apoya desde paypal
+
+
+<a name="Discord"></a>
+
+## Usalo para discord
+
+Mayormete en NPM lo usan para discord, asi que les ayudare un poquito
+
+primero discord a cambiado y ha echo cambios, pero aun asi hay muchos que usan una vercion inferior a los cambios. pero aun asi, te las mostrare en las dos verciones.
+
+
+- **Discord V11**
+  - `displayAvatarURL`
+  - `avatarURL`
+  - `new Discord.RichEmbed()`
+- **Discord V12**
+  - `displayAvatarURL({formart: "png"})`
+  - `avatarURL({formart: "png"})`
+  - `new  Discord.MessageEmbed()`
+
+Lo mas usado son las bienvenidas, a si que mostrare como hacerlas.
+
+- Embed
+```javascript
+/*
+
+        --== CODE DE LA BIENVENIDA / CARD ==--
+
+*/
+
+let img = await Zeew.WelcomeZeew(wel);
+
+// --== DISCORD V11 ==--
 
 let ImgEmbed = new Discord.Attachment(img, "welcome-ZeewApi.png")
-
-let EmbedWelcome = new Discord.RichEmbed()
+let embed = new Discord.RichEmbed()
 .attachFile(ImgEmbed)
 .setImage('attachment://welcome-ZeewApi.png')
+member.guild.channels.get("Id del canal").send(embed)
 
-member.guild.channels.get("Id del canal").send(EmbedWelcome)
-```
+// --== DISCORD V12 ==--
 
-
-## Resultado Bienvenidas
-
-* `.estilo("classic")`
-
-![scoped](https://i.imgur.com/XqOGyel.png)
-
-
-* `.estilo("anime")`
-
-![scoped](https://i.imgur.com/ZEt9X63.png)
-
-
-
-# ¡Nuevas Actualizaciones!
-
-## 05/marzo/2020
-  
-```js
-
-- tokens
- 
-```
-
-
-
-<a name="staff" />
-
-## Creadores:
-
-  ### @KamerrOficial
-  
-  ```
-    * ROL: Owner
-    * ID Discord: 403695999941345280
-    * Clan: ZeaterNight
-    * Redes Sociales: @KamerrOficial
-    * Portafolio: behance.net/kamerroficial
-  ```
-    
- ### @ValerynR  
- 
-```
-  * ROL: Co-Owner
-  * ID Discord: 393603334847856650
-```
-<a name="proyectos" />
-
-#### Proyectos
-
-| proyecto | descripcion |
-| --- | --- |
-| [Zeew-eco](https://www.npmjs.com/package/zeew) | Zeew Economia - Crea un economia con su propia tienda
-
-#### Donaciones
-
-
-* Apoya el creador De zeew » [Kamerr Ezz](https://ko-fi.com/kamerroficial) « y obten beneficios
+let ImgEmbed = new Discord.MessageAttachment(img, "welcome-ZeewApi.png")
+let embed =  new  Discord.MessageEmbed()
+.attachFile(ImgEmbed)
+.setImage('attachment://welcome-ZeewApi.png')
+member.guild.channels.cache.get("Id del canal").send({ embed: embed });
+ ```
