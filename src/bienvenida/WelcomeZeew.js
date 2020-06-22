@@ -15,7 +15,7 @@ async function WelcomeZeew(bienvenida){
     const estilo = bienvenida.estilo
     const token = bienvenida.token
 
-    const { body } = await request.get("https://zeew-test.glitch.me/api/img/bienvenida")
+    const { body } = await request.get("http://za-bw.kamerrezz.com/bw/static")
     .set("token", token)
     .query({
       estilo: estilo,

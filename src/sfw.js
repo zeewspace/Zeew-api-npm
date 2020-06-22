@@ -33,13 +33,6 @@ class sfw {
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
-  async suicide() {
-    let {
-      body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/suicide').set("token", this.token)
-    if (body.msg) throw new ZeewError(body.msg)
-    return body.url
-  }
   async kill() {
     let {
       body
@@ -51,13 +44,6 @@ class sfw {
     let {
       body
     } = await req.get('https://zw-api.herokuapp.com/api/gif/kiss').set("token", this.token)
-    if (body.msg) throw new ZeewError(body.msg)
-    return body.url
-  }
-  async wasted() {
-    let {
-      body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/wasted').set("token", this.token)
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }

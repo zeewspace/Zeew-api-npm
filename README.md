@@ -2,7 +2,7 @@
 ![npm](https://i.imgur.com/MP2bABn.png)
 
 
-# Bienvenido a Zeew Api
+# Zeew Api
 
 ## Informacion
 
@@ -33,16 +33,11 @@ ese token tiene registrado, el nombre del usuario al cual se le ha otorgado el t
 
 Y puedes optenerlo desde el servidor de soporte en discord.
 
-El `valor` son los parametros que pide, para hacer la funcion, ya que puedes obtener 2 resultados diferentes.
+El `valor` son los parametros o valores que necesita la api o la funcion.
 
-El `null` significa que no necesita ningun parametro
+Si tu uso de la api es para crear bots de discord, te ayudamos con un ejemplos [para usar con tu bot](#Discord).
 
-Estas funciones, regresan una gif de una imagen aleatoria segun su funcion.
-
-Si usas Discord y tu vercion la V12. esta estas [opciones](#Discord)
-
-
- Las funciones retornan una promesa, a si que recuerda usar el async/await
+ Las funciones retornan una promesa, a si que recuerda usar el async/await, para evitar un callback enorme.
 
 <a name="SFW"></a>
 
@@ -62,9 +57,7 @@ Funcion | Descripcion | Valor
 kiss | beso | 
 punch | golpe | 
 neko | gatio | 
-wink | giño | 
-slap | bogetada | 
-run | correr | 
+slap | bogetada |
 hug | abrazo | anime o human
 cry | llorar | anime o human
 cookie | galletas | anime o human
@@ -82,55 +75,39 @@ sfw.hug("anime");
 // -= Sin valor =-
 sfw.kiss();
 
-// Ejemplo usando Discord.js
-let kiss = await sfw.kiss()
-message.channel.send({files: [kiss]})
-
 ```
 
 <a name="IMG"></a>
 
 ### Constructor IMG
-> En un futuro sera usara igual que el constructor sfw
-> por el momento funciona de esta menera
 
 - **Como usar el constructor**
-- Forma
-  - Actual » Como funciona actualmente
-```javascript
-const Zeew = require('zeew');
-const sfw = new Zeew.img.<funcion>(valor)
-```
 
-- Forma
-  - Futuro » Asi es como funcionara proximamente
 ```javascript
-const Zeew = require('zeew');
-const sfw = new Zeew.img("Token")
+  //Removido temporarmente
+
+  /*
+    esta funcion puede cambiada o removido
+    por lo cual estamos devatiendo entre la comunidad
+    y los usuarios sobre esta seccion.
+
+    Lo cual ha sido removido temporarmente en esta actualizacion
+    si alguien la esta usando puede descargar la version
+    anteror a esta.
+
+    El problema seran las bienvenidas.
+    si las usa entra al servidor de soporte en discord
+    y se te ayudara con la bienvenida de otro modo.
+  */
 ```
 
 - **Contenido IMG**
 
-Funcion | Descripcion | Valor
---- | :---: | ---:
-blur | imagen borrosa | imagen
-sepia | imagen a escala de grises | imagen
-distort | Distorsiona  la imagne | imagen & Amplitud
-invert | invierte los colores | imagen
-
 - **Ejemplo**
 
 ```javascript
-const Zeew = require('zeew');
-
-// -= Un valor =-
-let img = "https://i.imgur.com/09RRYve.jpg";
-let blur = await Zeew.img.blur(img)
-
-// -= Dos Valores =-
-let img = "https://i.imgur.com/09RRYve.jpg";
-let blur = await Zeew.img.distort(img, 5);
-
+  // Entra al debate de esta funcion.
+  // » https://discord.gg/ZqvqUyx
 ```
 
 <a name="BW"></a>
@@ -151,6 +128,7 @@ colorDesc | color de la desc
 descripcion | texto de descripcion
 
 - **Estilos**
+  - *para ver los ejemplo dale click o touch al estilo* 
   - [classic](https://i.imgur.com/XqOGyel.png)
   - [anime](https://i.imgur.com/ZEt9X63.png)
 
@@ -169,6 +147,7 @@ let wel = new Zeew.Bienvenida()
 .colorDesc("#fff")
 .descripcion("Tenemos un nuevo usuario")
 
+/*Esto sirve para crear la imagen con los dato proporcionados*/
 let img = await Zeew.WelcomeZeew(wel);
 ```
 
@@ -181,10 +160,12 @@ let img = await Zeew.WelcomeZeew(wel);
 Si tienes errores, bugs o quieres contactarnos.
 
 - **Discord**
-  - [Servidor del Creador](https://discord.gg/3K8pdmf)
-  - [Servidor del Soporte](https://discord.gg/3K8pdmf)
+  - [Servidor del Creador](https://discord.gg/PBDbHGq)
+  - [Servidor del Soporte](https://discord.gg/ZqvqUyx)
 - **Redes Sociales**
   - Creador: `@KamerrEzz`
+- **Web**
+  - [Estatico](https://kamerrezz.github.io/za-web/)
 
 <a name="STAFF"></a>
 
@@ -226,21 +207,95 @@ Donacion | Descripcion
 
 ## Usalo para discord
 
-Mayormete en NPM lo usan para discord, asi que les ayudare un poquito
+La mayoria del uso de la api, es para la creacion de bots para discord.js.
 
-primero discord a cambiado y ha echo cambios, pero aun asi hay muchos que usan una vercion inferior a los cambios. pero aun asi, te las mostrare en las dos verciones.
+Tambien, la mayoria de los que usan la api para sus bots de discord, son principiantes y usan version diferentes, lo cual les ayudares con lo basico.
 
 
 - **Discord V11**
   - `displayAvatarURL`
   - `avatarURL`
   - `new Discord.RichEmbed()`
+  - `channels.get("ID-CANAL")`
 - **Discord V12**
   - `displayAvatarURL({formart: "png"})`
   - `avatarURL({formart: "png"})`
   - `new  Discord.MessageEmbed()`
+  - `channels.cache.get("ID-CANAL")`
 
-Lo mas usado son las bienvenidas, a si que mostrare como hacerlas.
+### Enviando Imagenes
+
+- Evento para las Bienvenidas
+  - v11
+    - [guildMemberAdd](https://discord.js.org/#/docs/main/v11/class/Client?scrollTo=e-guildMemberAdd)
+    - [guildMemberRemove](https://discord.js.org/#/docs/main/v11/class/Client?scrollTo=e-guildMemberRemove)
+  - v12
+    - [guildMemberAdd](https://discord.js.org/#/docs/main/v12/class/Client?scrollTo=e-guildMemberAdd)
+    - [guildMemberRemove](https://discord.js.org/#/docs/main/v12/class/Client?scrollTo=e-guildMemberRemove)
+
+> realmente no cambia nada, pero aun asi te doy la informacion.
+
+### Enviar la imagen
+
+Podemos enviar la Bienvenidas, targetas (cards) o imagenes, de diferente formas.
+
+A qui te mostrare como hacerlas.
+
+- Mensaje
+
+```javascript
+/*
+
+        --== CODE DE LA BIENVENIDA / CARD ==--
+
+*/
+
+let img = await Zeew.WelcomeZeew(wel); // Bienvenida
+let img = img.blur(img) // Imagenes
+
+// --== DISCORD V11 ==--
+  // Opcion 1 > Uso de Opciones
+.send({files: [img]})
+
+  // Opcion 2 > Uso de Attchment
+let {Attachment} = require('discord.js')
+let attchment = new Attachment(img)
+
+.send(attchment)
+
+
+// --== DISCORD V12 ==--
+  // Opcion 1 > Uso de Opciones
+.send({files: [img]})
+
+  // Opcion 2 > Uso de Attchment
+let {MessageAttachment} = require('discord.js')
+let attchment = new MessageAttachment(img)
+
+.send(attchment)
+
+
+/*
+Mas Informacion
+
+--== Attachment ==--
+ > v11
+https://discord.js.org/#/docs/main/v11/examples/attachments
+
+ > v12
+https://discord.js.org/#/docs/main/stable/examples/attachments
+
+--== Send / Opciones ==--
+  > v11
+https://discord.js.org/#/docs/main/v11/class/ClientUser?scrollTo=send
+
+  > v12
+https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=send
+*/
+
+
+
+```
 
 - Embed
 ```javascript
@@ -256,15 +311,26 @@ let img = await Zeew.WelcomeZeew(wel);
 
 let ImgEmbed = new Discord.Attachment(img, "welcome-ZeewApi.png")
 let embed = new Discord.RichEmbed()
-.attachFile(ImgEmbed)
-.setImage('attachment://welcome-ZeewApi.png')
+  .attachFile(ImgEmbed)
+  .setImage('attachment://welcome-ZeewApi.png')
 member.guild.channels.get("Id del canal").send(embed)
 
 // --== DISCORD V12 ==--
 
-let ImgEmbed = new Discord.MessageAttachment(img, "welcome-ZeewApi.png")
-let embed =  new  Discord.MessageEmbed()
-.attachFile(ImgEmbed)
-.setImage('attachment://welcome-ZeewApi.png')
-member.guild.channels.cache.get("Id del canal").send({ embed: embed });
- ```
+let ImgEmbed = new Discord.MessageAttachment(img, "welcome-ZeewApi.png");
+
+let embed = new Discord.MessageEmbed()
+  .attachFiles(ImgEmbed)
+  .setImage('attachment://welcome-ZeewApi.png')
+member.guild.channels.cache.get("Id del canal").send(embed);
+
+/*
+v11
+  [-] RichEmbed > attachFiles
+  > https://discord.js.org/#/docs/main/v11/class/RichEmbed
+v12
+  [-] MessageEmbed> attachFiles
+  > https://discord.js.org/#/docs/main/v12/class/MessageEmbed
+*/
+
+```
