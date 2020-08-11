@@ -1,5 +1,6 @@
-const { ZeewError } = require("../../utils/ZeewError.js")
+const { ZeewError } = require('../../utils/ZeewError')
 const request = require('node-superfetch');
+const {URI} = require('../../utils/key')
 
 async function WelcomeZeew(bienvenida){
   
@@ -15,7 +16,7 @@ async function WelcomeZeew(bienvenida){
     const estilo = bienvenida.estilo
     const token = bienvenida.token
 
-    const { body } = await request.get("http://za-bw.kamerrezz.com/bw/static")
+    const { body } = await request.get(`${URI}/img/bienvenida`)
     .set("token", token)
     .query({
       estilo: estilo,

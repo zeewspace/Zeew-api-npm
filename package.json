@@ -1,7 +1,7 @@
 {
   "name": "zeew",
-  "version": "0.1.5",
-  "description": "NPM de imagenes randoms y manipulacion de imagen para creadores de bots de discord.js",
+  "version": "0.1.7",
+  "description": "NPM de imagenes randoms y cards para creadores de bots de discord.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,23 +9,23 @@
   "dependencies": {
     "node-superfetch": "^0.1.10"
   },
-  "engines": {
-    "node": "10.x"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/KamerrEzz/ZeewApi"
   },
-  "author": "KamerrOficial",
+  "author": "Kamerr Ezz <proyects@kamerrezz.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KamerrOficial"
+    "url": "https://github.com/KamerrEzz/ZeewApi/issues"
   },
   "homepage": "https://discord.gg/ZqvqUyx",
   "keywords": [
-    "endpoint",
+    "zeew",
+    "zeew api",
+    "zeewapi",
     "api",
-    "node",
+    "bienvenida para discord",
+    "cards para discord",
     "discord.js",
     "gifs",
     "anime"

@@ -1,4 +1,3 @@
-
 ![npm](https://i.imgur.com/MP2bABn.png)
 
 
@@ -6,15 +5,18 @@
 
 ## Informacion
 
-Zeew api soy una api de imagenes de interaccion, pero mi mi fuerte es la manipulacion y mis bienvenidas.
+Zeew api soy una api de imagenes de interaccion, pero mi mi fuerte son las cards para bienvenidas o presentacion.
 
-Soy una api creada para los creadores de bots, ayudandoles y facilitandoles crear codigos complejos para manipular o crear bienvenidas.
+Soy una api creada para los creadores de bots, facilitandoles evitar crear codigos complejos para manipular o crear cards.
 
-y lo mejor que estoy completamente en ingles ♥
+y lo mejor que estoy completamente en español ♥
+
+>No olvides que si apoyas el proyecto con una pequeña [dontacion](#DONACIONES) , obtendras benefios grandes y cards personalizadas.
+
+> Recuerda que las donaciones ayudan a que #VivaZeewApi.
 
 - **Constructores**
   - [SFW](#SFW)
-  - [IMG](#IMG)
   - [BIENVENIDAS](#BW)
 - **Zeew Api**
   - [Soporte](#SOPORTE)
@@ -22,20 +24,17 @@ y lo mejor que estoy completamente en ingles ♥
   - [Mas Proyectos](#PROYECTOS)
   - [Donaciones](#DONACIONES)
 - **Extra**
-  - [Usalo con Discord.js](#Discord)
+  - [Ejemplos con Discord.js](#Discord)
 
 
 
 ## Instalacion & Uso
 
-Para usar la mayoria de las funciones, debes tener un token.
-ese token tiene registrado, el nombre del usuario al cual se le ha otorgado el token.
-
-Y puedes optenerlo desde el servidor de soporte en discord.
+Para usar debes tener un token. puedes optenerlo desde el servidor de soporte en discord.
 
 El `valor` son los parametros o valores que necesita la api o la funcion.
 
-Si tu uso de la api es para crear bots de discord, te ayudamos con un ejemplos [para usar con tu bot](#Discord).
+te ayudamos con un ejemplos [para usar con tu bot](#Discord).
 
  Las funciones retornan una promesa, a si que recuerda usar el async/await, para evitar un callback enorme.
 
@@ -57,7 +56,9 @@ Funcion | Descripcion | Valor
 kiss | beso | 
 punch | golpe | 
 neko | gatio | 
-slap | bogetada |
+wink | giño | 
+slap | bogetada | 
+run | correr | 
 hug | abrazo | anime o human
 cry | llorar | anime o human
 cookie | galletas | anime o human
@@ -77,44 +78,11 @@ sfw.kiss();
 
 ```
 
-<a name="IMG"></a>
-
-### Constructor IMG
-
-- **Como usar el constructor**
-
-```javascript
-  //Removido temporarmente
-
-  /*
-    esta funcion puede cambiada o removido
-    por lo cual estamos devatiendo entre la comunidad
-    y los usuarios sobre esta seccion.
-
-    Lo cual ha sido removido temporarmente en esta actualizacion
-    si alguien la esta usando puede descargar la version
-    anteror a esta.
-
-    El problema seran las bienvenidas.
-    si las usa entra al servidor de soporte en discord
-    y se te ayudara con la bienvenida de otro modo.
-  */
-```
-
-- **Contenido IMG**
-
-- **Ejemplo**
-
-```javascript
-  // Entra al debate de esta funcion.
-  // » https://discord.gg/ZqvqUyx
-```
-
 <a name="BW"></a>
 
 ### Constructor Bienvenida
 
-- **Contenido IMG**
+- **Contenido Card Bienvenida**
 
 Funcion | Descripcion 
 :--- | ---: 
@@ -128,7 +96,6 @@ colorDesc | color de la desc
 descripcion | texto de descripcion
 
 - **Estilos**
-  - *para ver los ejemplo dale click o touch al estilo* 
   - [classic](https://i.imgur.com/XqOGyel.png)
   - [anime](https://i.imgur.com/ZEt9X63.png)
 
@@ -160,12 +127,12 @@ let img = await Zeew.WelcomeZeew(wel);
 Si tienes errores, bugs o quieres contactarnos.
 
 - **Discord**
-  - [Servidor del Creador](https://discord.gg/PBDbHGq)
+  - [Servidor del Creador](https://discord.gg/ybAN7w8)
   - [Servidor del Soporte](https://discord.gg/ZqvqUyx)
 - **Redes Sociales**
   - Creador: `@KamerrEzz`
 - **Web**
-  - [Estatico](https://kamerrezz.github.io/za-web/)
+  - [Solo Informacion](https://kamerrezz.github.io/za-web/)
 
 <a name="STAFF"></a>
 
@@ -200,40 +167,25 @@ Proyecto | Descripcion
 Donacion | Descripcion 
 :--- | ---: 
 [ko-fi](https://ko-fi.com/kamerroficial) | Apoya desde cofi
-[paypal](https://www.paypal.me/kamerrezz) | Apoya desde paypal
+[paypal](https://www.paypal.me/kamerr) | Apoya desde paypal
 
 
 <a name="Discord"></a>
 
 ## Usalo para discord
 
-La mayoria del uso de la api, es para la creacion de bots para discord.js.
+La mayoria de la gente es demaciadamente floja para leer la documentaicon para usar bien el NPM. 
 
-Tambien, la mayoria de los que usan la api para sus bots de discord, son principiantes y usan version diferentes, lo cual les ayudares con lo basico.
+Hay personas que son nuevas y hay que ayudarles en algunas cosas.
 
+> Actualizacion: 11/agosto/2020 > discord.js v12
 
-- **Discord V11**
-  - `displayAvatarURL`
-  - `avatarURL`
-  - `new Discord.RichEmbed()`
-  - `channels.get("ID-CANAL")`
-- **Discord V12**
-  - `displayAvatarURL({formart: "png"})`
-  - `avatarURL({formart: "png"})`
-  - `new  Discord.MessageEmbed()`
-  - `channels.cache.get("ID-CANAL")`
-
-### Enviando Imagenes
+### Enviando cards de bienvenidas.
 
 - Evento para las Bienvenidas
-  - v11
-    - [guildMemberAdd](https://discord.js.org/#/docs/main/v11/class/Client?scrollTo=e-guildMemberAdd)
-    - [guildMemberRemove](https://discord.js.org/#/docs/main/v11/class/Client?scrollTo=e-guildMemberRemove)
-  - v12
     - [guildMemberAdd](https://discord.js.org/#/docs/main/v12/class/Client?scrollTo=e-guildMemberAdd)
     - [guildMemberRemove](https://discord.js.org/#/docs/main/v12/class/Client?scrollTo=e-guildMemberRemove)
 
-> realmente no cambia nada, pero aun asi te doy la informacion.
 
 ### Enviar la imagen
 
@@ -246,29 +198,16 @@ A qui te mostrare como hacerlas.
 ```javascript
 /*
 
-        --== CODE DE LA BIENVENIDA / CARD ==--
+        --== CODE DE LA CARD DE BIENVENIDA ==--
 
 */
+      // VARIABLE YA MOSTRADO
+let img = await Zeew.WelcomeZeew(wel);
 
-let img = await Zeew.WelcomeZeew(wel); // Bienvenida
-let img = img.blur(img) // Imagenes
-
-// --== DISCORD V11 ==--
-  // Opcion 1 > Uso de Opciones
+// --== OPCION 1 ==--
 .send({files: [img]})
 
-  // Opcion 2 > Uso de Attchment
-let {Attachment} = require('discord.js')
-let attchment = new Attachment(img)
-
-.send(attchment)
-
-
-// --== DISCORD V12 ==--
-  // Opcion 1 > Uso de Opciones
-.send({files: [img]})
-
-  // Opcion 2 > Uso de Attchment
+// --== OPCION 2 ==--
 let {MessageAttachment} = require('discord.js')
 let attchment = new MessageAttachment(img)
 
@@ -278,18 +217,10 @@ let attchment = new MessageAttachment(img)
 /*
 Mas Informacion
 
---== Attachment ==--
- > v11
-https://discord.js.org/#/docs/main/v11/examples/attachments
-
- > v12
+--== OPCION 2 ==--
 https://discord.js.org/#/docs/main/stable/examples/attachments
 
---== Send / Opciones ==--
-  > v11
-https://discord.js.org/#/docs/main/v11/class/ClientUser?scrollTo=send
-
-  > v12
+--== OPCION 1 ==--
 https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=send
 */
 
@@ -307,16 +238,7 @@ https://discord.js.org/#/docs/main/stable/class/ClientUser?scrollTo=send
 
 let img = await Zeew.WelcomeZeew(wel);
 
-// --== DISCORD V11 ==--
-
-let ImgEmbed = new Discord.Attachment(img, "welcome-ZeewApi.png")
-let embed = new Discord.RichEmbed()
-  .attachFile(ImgEmbed)
-  .setImage('attachment://welcome-ZeewApi.png')
-member.guild.channels.get("Id del canal").send(embed)
-
-// --== DISCORD V12 ==--
-
+// ATTACHMENT
 let ImgEmbed = new Discord.MessageAttachment(img, "welcome-ZeewApi.png");
 
 let embed = new Discord.MessageEmbed()
@@ -325,11 +247,7 @@ let embed = new Discord.MessageEmbed()
 member.guild.channels.cache.get("Id del canal").send(embed);
 
 /*
-v11
-  [-] RichEmbed > attachFiles
-  > https://discord.js.org/#/docs/main/v11/class/RichEmbed
-v12
-  [-] MessageEmbed> attachFiles
+  // --== MessageEmbed > attachFiles ==--
   > https://discord.js.org/#/docs/main/v12/class/MessageEmbed
 */
 

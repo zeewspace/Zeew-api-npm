@@ -2,48 +2,53 @@ const req = require("node-superfetch")
 const {
   ZeewError
 } = require("../utils/ZeewError")
+const {GIF} = require('../utils/key');
 
+/**
+ * GIFs
+ */
 class sfw {
 
   /**
    * @param {string} token 
    */
   constructor(token) {
+    if(!token) throw new ZeewError('Debes Colocar un Token')
     this.token = token;
   }
 
   async neko() {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/neko').set("token", this.token)
+    } = await req.get(GIF + '/gif/neko').set("token", this.token)
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
   async punch() {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/punch').set("token", this.token)
+    } = await req.get(GIF + '/gif/punch').set("token", this.token)
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
   async slap() {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/slap').set("token", this.token)
+    } = await req.get(GIF + '/gif/slap').set("token", this.token)
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
   async kill() {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/kill').set("token", this.token)
+    } = await req.get(GIF + '/gif/kill').set("token", this.token)
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
   async kiss() {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/kiss').set("token", this.token)
+    } = await req.get(GIF + '/gif/kiss').set("token", this.token)
     if (body.msg) throw new ZeewError(body.msg)
     return body.url
   }
@@ -59,7 +64,7 @@ class sfw {
   async hug(tp) {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/hug').set("token", this.token)
+    } = await req.get(GIF + '/gif/hug').set("token", this.token)
       .query({
         type: tp
       })
@@ -74,7 +79,7 @@ class sfw {
   async cry(tp) {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/cry').set("token", this.token)
+    } = await req.get(GIF + '/gif/cry').set("token", this.token)
       .query({
         type: tp
       })
@@ -89,7 +94,7 @@ class sfw {
   async cookie(tc) {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/cookie').set("token", this.token)
+    } = await req.get(GIF + '/gif/cookie').set("token", this.token)
       .query({
         type: tc
       })
@@ -104,7 +109,7 @@ class sfw {
   async dance(tp) {
     let {
       body
-    } = await req.get('https://zw-api.herokuapp.com/api/gif/dance').set("token", this.token)
+    } = await req.get(GIF + '/gif/dance').set("token", this.token)
       .query({
         type: tp
       })
