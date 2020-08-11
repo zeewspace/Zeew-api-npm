@@ -5,9 +5,9 @@
 
 ## Informacion
 
-Zeew api soy una api de imagenes de interaccion, pero mi mi fuerte son las cards para bienvenidas o presentacion.
+Zeew api soy una api de imagenes de interaccion, pero mi fuerte son las cards para bienvenidas o presentacion.
 
-Soy una api creada para los creadores de bots, facilitandoles evitar crear codigos complejos para manipular o crear cards.
+Soy una api creada para los creadores de bots crear cards de bienvenidas.
 
 y lo mejor que estoy completamente en español ♥
 
@@ -252,3 +252,4 @@ member.guild.channels.cache.get("Id del canal").send(embed);
 */
 
 ```
+## GRACIAS ♥
