@@ -6,5 +6,6 @@ const {WelcomeZeew}= require("./src/bienvenida/WelcomeZeew.js")
 module.exports = {
     Bienvenida,
     WelcomeZeew,
-    sfw
+    sfw,
+    img
 }

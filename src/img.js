@@ -1,71 +1,133 @@
-const req = require("node-superfetch");
-const { ZeewError } = require("../utils/ZeewError");
-const { URI } = require("../utils/key");
+const Canvas = require('canvas');
+const Jimp = require('jimp');
+const GIFEncoder = require('gifencoder');
+const circle = require('@jimp/plugin-circle');
+const config = require('@jimp/custom');
 
-class img {
-  constructor(token) {
-    if(!token) return ZeewError('Debes Colocar un Token') 
-    this.token = token;
-  }
+const {
+  ZeewError
+} = require("../utils/ZeewError")
 
-  /**
-   *
-   * @param {*} image | Coloca la URL de una imagen
-   */
-  invert(image) {
-    const { body } = req
-    .get(`${URI}/img/invert`)
-    .set("token", this.token)
-    .query({
-      avatar: image,
-    });
+config({plugins: [circle]}, Jimp);
 
-    if (body.status === "404") throw new ZeewError(body.mensaje)
-    return body;
-  }
+class Img {
+    /**
+     * trigger
+     * @param {img} img URL de una imagen
+     * @returns {img} <Buffer>
+     */
+    async triggered(img) {
+        if(!img) throw new Error('Coloca una imagen');
+        const base = await Canvas.loadImage(__dirname + '/assets/triggered.png');
+        const image = await Canvas.loadImage(img);
+        const GIF = new GIFEncoder(256, 310);
+        
+        GIF.start();
+        GIF.setRepeat(0);
+        GIF.setDelay(15);
+        
+        const canvas = Canvas.createCanvas(256, 310);
+        const ctx = canvas.getContext('2d');
+        
+        const x = 20;
+        const y = 10;
+        let n = 0;
+        while (n < 9) {
+            ctx.clearRect(0,0, 256, 256);
+            ctx.fillStyle = '#FF000033';
+            ctx.fillRect(0, 0, 256, 310);
+            ctx.drawImage(image, Math.floor(Math.random() * x) - x, Math.floor(Math.random() * x) - x, 256 + x, 310 - 54 + x)
+            ctx.drawImage(base, Math.floor(Math.random() * y) - y, 310 - 54 + Math.floor(Math.random() * y) - y, 256 + y, 54 + y);
+            GIF.addFrame(ctx);
+            n++
+        }
 
-  /**
-   *
-   * @param {*} img URL de la imagen
-   * @param {*} amplitud La cantidad de distorcion
-   */
-  distort(img, amplitud) {
-    const { body } = req
-      .get(`${URI}/img/distort`)
-      .set("token", this.token)
-      .query({ avatar: img, amplitud });
+        GIF.finish();
+        return GIF.out.getData();
+        //return canvas.toBuffer();
+    }
+    /**
+     * 
+     * @param {img} img URL | URI de una imagen
+     */
+    async sepia(img){
+      if(!img) throw new ZeewError('Debes Colocar una imagen')
+      img = await Jimp.read(img);
+      img.sepia();
+      return await img.getBufferAsync("image/png");
+    }
+    /**
+     * 
+     * @param {img} img URL | URI de una imagen
+     */
+    async invertir(img){
+      if (!img) throw new ZeewError('Debes Colocar una imagen');
+      img = await Jimp.read(img)
+      img.invert()
+      return img.getBufferAsync("image/png");
+    }
 
-      if (body.status === "404") throw new ZeewError(body.mensaje)
-    return body;
-  }
+    /**
+     * 
+     * @param {img} img URL | URI de una imagen
+     */
+    async gris(img){
+      if(!img) throw new ZeewError('Debes colocar una imagen');
+      img = await Jimp.read(img);
+      img.greyscale()
+      return img.getBufferAsync("image/png")
+    }
 
-  /**
-   *
-   * @param {*} img la URL de la imagen
-   */
-  blur(img) {
-    const { body } = req
-      .set("token", this.token)
-      .get(`${URI}/img/blur`)
-      .query({ avatar: img });
+    /**
+     * 
+     * @param {img} img URL | URI de una imagen
+     * @param {pixels} pixels Cantidad de desenfoque
+     */
+    async desenfoque(img, pixels = 5){
+      if(!img) throw new ZeewError('Debes colocar una imagen');
+      img = await Jimp.read(img);
+      img.blur(pixels)
+      return img.getBufferAsync("image/png")
+    }
 
-      if (body.status === "404") throw new ZeewError(body.mensaje)
-    return body;
-  }
+    /**
+     * 
+     * @param {img} img URL | URI de una imagen
+     * @param {size} size Tamaño del pixel
+     */
+    async pixel(img,size = 5){
+      if(!img) throw new ZeewError('Debes colocar una imagen')
+      img = await Jimp.read(img);
+      img.pixelate(size)
+      return img.getBufferAsync("image/png")
+    }
 
-  /**
-   *
-   * @param {String} imagen La URL de la imagen
-   */
-  sepia(imagen) {
-    const { body } = req
-      .get(`${URI}/img/sepia`)
-      .set("token", this.token)
-      .query({ avatar: imagen });
+    /**
+     * 
+     * @param {img} img URL | URI de una imagen
+     */
+    async gay(img){
+      if(!img) throw new ZeewError('Debes colocar una Imagen');
+      const base = await Canvas.loadImage(__dirname + '/assets/gay.png');
+      const image = await Canvas.loadImage(img);
+      const canvas = Canvas.createCanvas(500, 500);
+      const ctx = canvas.getContext('2d');
 
-      if (body.status === "404") throw new ZeewError(body.mensaje)
-    return body;
-  }
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      ctx.drawImage(base, 0,0 , canvas.width, canvas.height)
+      return canvas.toBuffer();
+    }
+
+    /**
+     * 
+     * @param {img} img URL | URL de una imagen
+     */
+    async circulo(img){
+      if(!img) throw new ZeewError('Debes color una imagen');
+      img = await Jimp.read(img);
+      img.circle();
+      return img.getBufferAsync("image/png")
+    }
 }
 
-module.exports = img;
+module.exports = Img
