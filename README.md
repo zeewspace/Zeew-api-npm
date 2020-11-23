@@ -75,7 +75,7 @@ sfw.hug("anime");
 sfw.kiss();
 ```
 
-<a name="SFW"></a>
+<a name="IMG"></a>
 
 ### Constructor IMG
 
@@ -164,7 +164,7 @@ Si tienes errores, bugs o quieres contactarnos.
 
 - **Discord**
   - [Servidor del Creador](https://discord.gg/ybAN7w8)
-  - [Servidor del Soporte](https://discord.gg/ZqvqUyx)
+  - [Servidor del Soporte](https://discord.gg/Nuxu9ZE)
 - **Redes Sociales**
   - Creador: `@KamerrEzz`
 - **Web**

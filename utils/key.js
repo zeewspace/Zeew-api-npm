@@ -1,4 +1,4 @@
 module.exports = {
-    URI: 'https://zeewapi.kamerrezz.com/api',
-    GIF: 'https://zw-api.herokuapp.com/api'
+    URI: 'https://zeewapi.kamerrezz.com',
+    GIF: 'https://zw-api.herokuapp.com'
 }
