@@ -78,7 +78,7 @@ class Img {
    */
   async desenfoque(img, pixel = 5) {
     let { body } = await req
-      .get(this.uri + "/gris")
+      .get(this.uri + "/desenfoque")
       .set("token", this.token)
       .query({
         avatar: img,
@@ -96,7 +96,7 @@ class Img {
    */
   async pixel(img, pixel = 5) {
     let { body } = await req
-      .get(this.uri + "/gris")
+      .get(this.uri + "/pixel")
       .set("token", this.token)
       .query({
         avatar: img,
@@ -113,7 +113,7 @@ class Img {
    */
   async gay(img) {
     let { body } = await req
-      .get(this.uri + "/gris")
+      .get(this.uri + "/gay")
       .set("token", this.token)
       .query({
         avatar: img,
@@ -129,7 +129,7 @@ class Img {
    */
   async circulo(img) {
     let { body } = await req
-      .get(this.uri + "/gris")
+      .get(this.uri + "/circulo")
       .set("token", this.token)
       .query({
         avatar: img,
@@ -139,7 +139,7 @@ class Img {
   }
   async shipeo(img1, img2, ship) {
     let { body } = await req
-      .get(this.uri + "/gris")
+      .get(this.uri + "/shipeo")
       .set("token", this.token)
       .query({
         avatar: img1,
