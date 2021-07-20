@@ -1,6 +1,6 @@
 {
   "name": "zeew",
-  "version": "0.1.9",
+  "version": "1.2.2",
   "description": "NPM de imagenes randoms y cards para creadores de bots de discord.js en español",
   "main": "index.js",
   "scripts": {

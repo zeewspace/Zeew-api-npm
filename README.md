@@ -2,13 +2,35 @@
 
 # Zeew Api
 
+
+- [Zeew Api](#zeew-api)
+  - [Informacion](#informacion)
+  - [Instalacion & Uso](#instalacion--uso)
+  - [Contenido](#contenido)
+    - [SFW](#sfw)
+    - [NSFW](#nsfw)
+    - [IMG](#img)
+    - [CARDS](#cards)
+  - [Ayuda & Soporte](#ayuda--soporte)
+    - [Soporte](#soporte)
+    - [Staff](#staff)
+    - [Proyectos](#proyectos)
+    - [Donaciones](#donaciones)
+  - [DISCORD](#discord)
+    - [Enviando cards de bienvenidas.](#enviando-cards-de-bienvenidas)
+    - [Enviar la imagen](#enviar-la-imagen)
+      - [Ejemplos y que hacer](#ejemplos-y-que-hacer)
+      - [Comando triggered](#comando-triggered)
+      - [Usando Card de Bienvenida](#usando-card-de-bienvenida)
+- [GRACIAS ♥](#gracias-)
+
 ## Informacion
 
 🙋‍♂️ As tu proyecto mas unico y especial con esta api hermosa
 
 ZeewApi es una api que te ayudara a tener imagenes personalizadas, cards de bienvenida, niveles, gif de interaccion y mucho mas.
 
-A si que olvidate de estar sufriendo por aprender canvas, jimp u otros modulos parecidos, usar otros modulos que hacen lo mismo que pensan demaciado o no funcionan correctamente.
+A si que olvidate de estar sufriendo por aprender canvas, jimp u otros modulos parecidos, usar otros modulos que hacen lo mismo y que pensan demaciado o no funcionan correctamente.
 
 No olvides que puedes [`apoyar 💰`](#DONACIONES) y obtener grandes beneficios. Y asi ayudas que seamos el mejor !!!
 
@@ -16,18 +38,6 @@ No olvides que puedes [`apoyar 💰`](#DONACIONES) y obtener grandes beneficios.
 
 > #TeamZeewApi
 
-- **Contenido**
-  - [SFW](#SFW)
-  - [NSFW](#NSFW)
-  - [IMG](#IMG)
-  - [Cards de Bienvenidas](#BW)
-- **Soporte**
-  - [Soporte](#SOPORTE)
-  - [Staff](#STAFF)
-  - [Mas Proyectos](#PROYECTOS)
-  - [Donaciones](#DONACIONES)
-- **Ayuda**
-  - [Ejemplos con Discord.js](#DISCORD)
 
 ## Instalacion & Uso
 
@@ -39,9 +49,12 @@ Tienes un ejemplo del contructor, como usarlo y su contenido para que no estes t
 
 Todas las funciones son promesas, a si que no olvides usar el `async/await` o el `then/catch`
 
+## Contenido
+
+
 <a name="SFW"></a>
 
-### Constructor SFW
+### SFW
 
 - **Como usarlo**
 
@@ -68,9 +81,10 @@ sfw.kiss();
 | punch   |    golpe    |
 | wasted  |   wasted    |
 
-<a name="SFW"></a>
 
-### Constructor NSFW
+<a name="NSFW"></a>
+
+### NSFW
 
 - **Como usarlo**
 
@@ -90,7 +104,7 @@ nsfw.oppais();
 
 <a name="IMG"></a>
 
-### Constructor IMG
+### IMG
 
 - **Como usar el constructor**
 
@@ -126,9 +140,10 @@ img.shipeo(
 | circulo    |  convierte una imagen en circulo   |                 imagen |
 | shipeo     |          un hermoso ship           | imagen, imagen, imagen |
 
-<a name="BW"></a>
 
-### Constructor Bienvenida
+<a name="CARDS"></a>
+
+### CARDS
 
 - **Contenido Card Bienvenida**
 
@@ -167,7 +182,9 @@ let wel = new Zeew.Bienvenida()
 let img = await Zeew.WelcomeZeew(wel);
 ```
 
-## Informacion & Soporte
+---
+
+## Ayuda & Soporte
 
 <a name="SOPORTE"></a>
 
@@ -177,12 +194,12 @@ Si tienes errores, bugs o quieres contactarnos.
 
 - **Discord**
   - [Servidor del Creador](https://discord.gg/ybAN7w8)
-  - [Servidor del Soporte](https://discord.gg/Nuxu9ZE)
+  - [Servidor del Soporte](https://discord.gg/6tCdxshm9w)
 - **Redes Sociales**
   - Creador: `@KamerrEzz`
-- **Documentacion**
-  - [Informacion](https://kamerrezz.github.io/za-web/docs)
-  - [Ejemplos](https://kamerrezz.github.io/za-web/ejemplos)
+  - COO: [`@mrbugexe`](https://twitter.com/mrbugexe)
+
+---
 
 <a name="STAFF"></a>
 
@@ -197,27 +214,47 @@ Si tienes errores, bugs o quieres contactarnos.
 * Pagina Web: KamerrEzz.com
 ```
 
+- **Mr.Bug**
+
+```
+* ROL: Dev and TEAM
+* ID Discord: 409769315357687809
+* Twitter: @MrBugexe
+* Proyecto: https://discord.gg/3x5nWkKAzr
+```
+
+---
+
 <a name="PROYECTOS"></a>
 
 ### Proyectos
 
-| Proyecto                                           |       Descripcion |
-| :------------------------------------------------- | ----------------: |
-| [Zeew-eco](https://www.npmjs.com/package/zeew-eco) | Crea una economia |
+| Proyecto                                           |         Descripcion |
+| :------------------------------------------------- | ------------------: |
+| [Zeew-Eco](https://www.npmjs.com/package/zeew-eco) | Sistema de economia |
+| [Zeew-Level](https://www.npmjs.com/)               |  Sistema de niveles |
+
+---
+
+<a name="DONACIONES"></a>
 
 ### Donaciones
 
-<a name="DONACIONES"></a>
-Donacion | Descripcion
-:--- | ---:
-[ko-fi](https://ko-fi.com/kamerrezz) | Apoya desde cofi
-[paypal](https://www.paypal.me/kamerr) | Apoya desde paypal
+
+| Donacion                                         |                 Descripcion |
+| :----------------------------------------------- | --------------------------: |
+| [paypal](https://www.paypal.me/kamerrezzoficial) | Apoya a kamerr desde paypal |
+| [patreon](https://paypal.me/Bug0001)             |     Apoya a bug con un cafe |
+
+---
 
 <a name="DISCORD"></a>
 
-## Usalo para discord
+## DISCORD
 
 Las personas no le gusta leer la documentacion, pero ni modos, tienen que leerlo para saber como funciona, pero aun asi, soy muy buena persona que te ayudare un poquito
+
+Si no sabes leer la documentacion te dejo este hermoso video de [Como leer la documentacion de discord por ksgrapin](https://www.youtube.com/watch?v=FnN2OP5S6s8)
 
 > Actualizacion: 11/agosto/2020 > discord.js v12
 
@@ -242,7 +279,7 @@ Mas ayuda y ejemplos en nuestro servidor de discord o en la pagina.
 let avatar = message.author.avatarURL({ format: "jpg" });
 
 /* Como debes colocar cuando mandas gif usando attcment*/
-let attchment = new MessageAttachment(img, "zeewapi-img.gif");
+let attchment = new MessageAttachment(img , "zeewapi-img.gif");
 ```
 
 <a name="mensajes"></a>
@@ -285,4 +322,4 @@ client.on("guildMemberAdd", async (member) => {
 });
 ```
 
-## GRACIAS ♥
+# GRACIAS ♥
