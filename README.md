@@ -165,6 +165,9 @@ img.shipeo(
 
 - **Modo de Uso**
 
+Si quieres los datos por default deja vacion, por ejemplo tomemos el fondo.
+por default sera transparente, y debemos dejarlo de esta menera `.fondo("")`
+
 ```javascript
 const Zeew = require("zeew");
 
@@ -176,7 +179,8 @@ let wel = new Zeew.Bienvenida()
   .colorTit("#FF3DB0")
   .titulo("Bienvenido")
   .colorDesc("#fff")
-  .descripcion("Tenemos un nuevo usuario");
+  .descripcion("Tenemos un nuevo usuario")
+  .colorCirculo('#FF5555');
 
 /*Esto sirve para crear la imagen con los dato proporcionados*/
 let img = await Zeew.WelcomeZeew(wel);

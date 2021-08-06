@@ -1,52 +1,51 @@
 class Bienvenida {
-    
+
     constructor(datos = {}) {
-      let keys = Object.keys(datos)
-    if(keys.length > 0) {
-        for(var i in keys) this[keys[i]] = datos[keys[i]]
+        let keys = Object.keys(datos)
+        if (keys.length > 0) {
+            for (var i in keys) this[keys[i]] = datos[keys[i]]
+        }
     }
-    }
-    token(token){
+    token(token) {
         this.token = token
         return this;
     }
-    titulo(title){
+    titulo(title) {
         this.title = title;
-    return this;
+        return this;
     }
-  
-    colorTit(ctit){
+    colorTit(ctit) {
         this.ctit = ctit
         return this
     }
-  
-    colorDesc(cdesc){
+    colorDesc(cdesc) {
         this.cdesc = cdesc
-    
-    return this;
+
+        return this;
     }
-  
-    descripcion(Desc){
+    descripcion(Desc) {
         this.Desc = Desc
-    
-    return this;
+
+        return this;
     }
-  /** 
-   * @param { URL } avatar <Required> El avatar del usuario o un url. 
-   * @private
-   */
-    avatar(avatar){
+    avatar(avatar) {
         this.avatar = avatar;
         return this;
     }
-  
-    fondo(fondo){
+    fondo(fondo) {
         this.fondo = fondo;
         return this;
     }
-  
-     estilo(estilo){
+    estilo(estilo) {
         this.estilo = estilo;
+        return this;
+    }
+    colorCirculo(colorC) {
+        this.coloc = colorC;
+        return this; 
+    }
+    font(font) {
+        this.font = font;
         return this;
     }
 }
