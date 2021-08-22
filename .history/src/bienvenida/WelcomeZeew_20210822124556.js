@@ -23,6 +23,7 @@ const WelcomeZeew = async (card) => {
     // font: typeof card.font === "function" ? card.font() : ""
   }
 
+
   const { body } = await request
   .get(`${URI}/api/bw/${values.estilo}`)
   .set("token", card.token)
