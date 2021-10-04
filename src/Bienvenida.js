@@ -49,4 +49,4 @@ class Bienvenida {
         return this;
     }
 }
-module.exports = {Bienvenida};
+module.exports = Bienvenida;

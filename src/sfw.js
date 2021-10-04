@@ -1,6 +1,6 @@
 const req = require("node-superfetch");
 const { ZeewError } = require("../utils/ZeewError");
-const { GIF } = require("../utils/key");
+const { INT } = require("../utils/key");
 
 /**
  * GIFs
@@ -12,7 +12,7 @@ class sfw {
   constructor(token) {
     if (!token) throw new ZeewError("Debes Colocar un Token");
     this.token = token;
-    this.uri = GIF + "/api/gif/sfw";
+    this.uri = INT + "/gif/sfw";
   }
 
   async neko() {
@@ -67,4 +67,4 @@ class sfw {
   }
 }
 
-module.exports = { sfw };
+module.exports = sfw
