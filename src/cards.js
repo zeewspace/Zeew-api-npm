@@ -16,7 +16,7 @@ class card {
     if(!render.estilo) throw new ZeewError("Esta propiedad hace render a la bienvenida");
     const jsonB = JSON.stringify(render)
     const jsonP = JSON.parse(jsonB)
-    
+
     const { body } = await request
     .get(`${INT}/bw/${jsonP.estilo}`)
     .set("token", render.token)

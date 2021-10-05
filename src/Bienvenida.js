@@ -15,16 +15,16 @@ class Bienvenida {
         return this;
     }
     colorTit(ctit) {
-        this.ctit = ctit
+        this.colortit = ctit
         return this
     }
     colorDesc(cdesc) {
-        this.cdesc = cdesc
+        this.colordesc = cdesc
 
         return this;
     }
-    descripcion(Desc) {
-        this.Desc = Desc
+    descripcion(desc) {
+        this.desc = desc
 
         return this;
     }
