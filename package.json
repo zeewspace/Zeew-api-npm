@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KamerrEzz/ZeewApi"
+    "url": "https://github.com/zeewdev"
   },
   "author": "Kamerr Ezz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KamerrEzz/ZeewApi/issues"
+    "url": "https://github.com/zeewdev/Zeew-api-npm/issues"
   },
-  "homepage": "https://kamerrezz.com/za-web/",
+  "homepage": "https://docs.zeew.dev",
   "keywords": [
     "zeew",
     "zeew api",
