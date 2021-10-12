@@ -11,7 +11,7 @@ class Bienvenida {
         return this;
     }
     titulo(tit) {
-        this.title = tit;
+        this.tit = tit;
         return this;
     }
     colorTit(ctit) {
