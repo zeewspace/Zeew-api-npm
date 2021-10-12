@@ -10,8 +10,8 @@ class Bienvenida {
         this.token = token
         return this;
     }
-    titulo(title) {
-        this.title = title;
+    titulo(tit) {
+        this.title = tit;
         return this;
     }
     colorTit(ctit) {
