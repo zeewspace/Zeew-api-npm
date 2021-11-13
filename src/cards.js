@@ -11,20 +11,26 @@ class card {
   }
 
   async render(render) {
-    if(!render) throw new ZeewError("Debes colocar el render");
-    if(typeof render === 'function') throw new ZeewError("Debes colocar el render");
-    if(!render.estilo) throw new ZeewError("Esta propiedad hace render a la bienvenida");
-    const jsonB = JSON.stringify(render)
-    const jsonP = JSON.parse(jsonB)
+    try {
+      if (!render) throw new ZeewError("Debes colocar el render");
+      if (typeof render === "function")
+        throw new ZeewError("Debes colocar el render");
+      if (!render.estilo)
+        throw new ZeewError("Esta propiedad hace render a la bienvenida");
+      const jsonB = JSON.stringify(render);
+      const jsonP = JSON.parse(jsonB);
 
-    const { body } = await request
-    .get(`${INT}/bw/${jsonP.estilo}`)
-    .set("token", render.token)
-    .query(jsonP);
-  
-    if (body.status == "404") throw new ZeewError(body.mensaje);
-  
-    return body;
+      const { body } = await request
+        .get(`${INT}/bw/${jsonP.estilo}`)
+        .set("token", render.token)
+        .query(jsonP);
+
+      if (body.status == "404") throw new ZeewError(body.mensaje);
+
+      return body;
+    } catch (error) {
+      throw new ZeewError(error.body.mensaje);
+    }
   }
 }
 

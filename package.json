@@ -1,6 +1,6 @@
 {
   "name": "zeew",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Wrapper oficial de zeew - imagenes para interaccion y api",
   "main": "index.js",
   "scripts": {

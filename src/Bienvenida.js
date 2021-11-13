@@ -41,7 +41,7 @@ class Bienvenida {
         return this;
     }
     colorCirculo(colorC) {
-        this.coloc = colorC;
+        this.colorCircle = colorC;
         return this; 
     }
     font(font) {
