@@ -5,6 +5,7 @@
 - [Zeew](#zeew)
   - [Informacion](#informacion)
   - [Instalacion y uso](#instalacion-y-uso)
+  - [Mas contenido](#mas-contenido)
 - [Contenido](#contenido)
   - [Gif](#gif)
   - [IMG](#img)
@@ -18,7 +19,7 @@ Wrapper para usar la api de interaccion, perfiles, proyectos y la botlist.
 La api de interaccion ayuda a tener imagenes editadas, gifs de interaccion y mas importante
 olvidate de estar sufriendo por aprender canvas, jimp u otros modulos parecidos, usar otros modulos que hacen lo mismo y que pensan demaciado o no funcionan correctamente. Por que curiosamente no te dicen que instales o configures tu sistema operativo para manejar formatos de imagenes y archivos.
 
-• documentacion: https://docs.zeew.dev <br>
+• Documentacion: https://docs.zeew.dev <br>
 • Web: https://zeew.dev <br>
 • Discord: https://zeew.dev/discord
 
@@ -26,6 +27,11 @@ olvidate de estar sufriendo por aprender canvas, jimp u otros modulos parecidos,
 
 La mayoria de las funciones son asyncronas eso quiere decir que tendras que usar <br>
 `async / await` o `then / catch`
+
+## Mas contenido 
+Revisa la [documentación](https://docs.zeew.dev) donde te mostrara todo lo que tiene
+el módulo (NPM), para que no te quedes con la información que se muestra aquí,
+ya que se muestra está resumida y no muestra todo lo que contiene el módulo.
 
 # Contenido
 

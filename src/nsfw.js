@@ -17,7 +17,17 @@ class sfw {
 
   async maid() {
     let { body } = await req.get(this.uri + "/maid").set("token", this.token);
-    if (body.msg) throw new ZeewError(body.msg);
+    if (body.status) throw new ZeewError(body.message);
+    return body.url;
+  }
+  async boobs() {
+    let { body } = await req.get(this.uri + "/boobs").set("token", this.token);
+    if (body.status) throw new ZeewError(body.message);
+    return body.url;
+  }
+  async furry() {
+    let { body } = await req.get(this.uri + "/furry").set("token", this.token);
+    if (body.status) throw new ZeewError(body.message);
     return body.url;
   }
 }

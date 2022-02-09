@@ -29,7 +29,7 @@ class card {
 
       return body;
     } catch (error) {
-      console.log(error.message);
+      console.log(`Zeew.API-Error: ${error.message}`);
     }
   }
 }
