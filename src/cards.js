@@ -25,11 +25,11 @@ class card {
         .set("token", render.token)
         .query(jsonP);
 
-      if (body.status == "404") throw new ZeewError(body.mensaje);
+      if (body.status == 404) throw new ZeewError(body.mensaje);
 
       return body;
     } catch (error) {
-      throw new ZeewError(error.body.mensaje);
+      console.log(error.message);
     }
   }
 }
