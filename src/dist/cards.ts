@@ -1,16 +1,17 @@
-const req = require("node-superfetch");
-const { ZeewError } = require("../utils/ZeewError");
-const { INT } = require("../utils/key");
-const request = require("node-superfetch");
+import { ZeewError } from "../utils/ZeewError";
+import { INT } from "../utils/key";
+import request from "node-superfetch";
+import Bienvenida from "./Bienvenida";
 
 class card {
-  constructor(token) {
+  constructor(token: string) {
     if (!token) throw new ZeewError("Debes colocar el token");
     this.token = token;
-    this.bienvenida = require("./Bienvenida");
   }
 
-  async render(render) {
+  token;
+  bienvenida = Bienvenida;
+  async render(render: any) {
     try {
       if (!render) throw new ZeewError("Debes colocar el render");
       if (typeof render === "function")
@@ -25,13 +26,16 @@ class card {
         .set("token", render.token)
         .query(jsonP);
 
+      // @ts-ignore
       if (body.status == 404) throw new ZeewError(body.mensaje);
 
       return body;
     } catch (error) {
+      console.log(error);
+      // @ts-ignore
       console.log(`Zeew.API-Error: ${error.message}`);
     }
   }
 }
 
-module.exports = card;
+export default card;
