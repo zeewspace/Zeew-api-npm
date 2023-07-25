@@ -28,7 +28,8 @@ olvidate de estar sufriendo por aprender canvas, jimp u otros modulos parecidos,
 La mayoria de las funciones son asyncronas eso quiere decir que tendras que usar <br>
 `async / await` o `then / catch`
 
-## Mas contenido 
+## Mas contenido
+
 Revisa la [documentación](https://docs.zeew.dev) donde te mostrara todo lo que tiene
 el módulo (NPM), para que no te quedes con la información que se muestra aquí,
 ya que se muestra está resumida y no muestra todo lo que contiene el módulo.
@@ -83,16 +84,16 @@ img.<categoria>.<funcion>
 // Filtros
 img.filter.circulo("URL DE UNA IMAGEN")
 // Bienvenida
-const card = new img.card
-      .bienvenida()
-      .token(key)
-      .estilo("classic") // mas estilos en la doc
-      .avatar("URL DEL AVATAR")
-      .fondo("URL DEL FONDO")
-      .colorTit("#FF3DB0")
-      .titulo("Bienvenido")
-      .colorDesc("#fff")
-      .descripcion("Tenemos un nuevo usuario");
+const card = new img.card.bienvenida()
+      .Token(key)
+      .Estilo("classic") // mas estilos en la doc
+      .Avatar("URL DEL AVATAR")
+      .Fondo("URL DEL FONDO")
+      .ColorTit("#FF3DB0")
+      .Titulo("Bienvenido")
+      .ColorDesc("#fff")
+      .Descripcion("Tenemos un nuevo usuario");
+
 const render = await img.card.render(card);
 ```
 
