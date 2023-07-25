@@ -1,3 +1,5 @@
 /node_modules
 /user.js
 /img.png
+/lib
+__test__
